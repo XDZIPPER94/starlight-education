@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game launcher 2</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #0023a0;
+            overflow: hidden; /* Prevent scrollbars on the full-screen embed */
+        }
+
+        .image-container {
+            margin-bottom: 20px; /* Space between the image and the buttons */
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px; /* Space between the two buttons */
+        }
+
+        img {
+            max-width: 100%; /* Ensure the image scales with its container */
+            height: auto;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            background-color: #28a745; /* Green color */
+            color: white;
+            transition: background-color 0.3s, transform 0.1s;
+            border-radius: 12px; /* Adjust the value for more or less rounding */
+        }
+
+        button.clicked {
+            background-color: #218838; /* Darker green when clicked */
+            transform: scale(0.95);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .overlay .back-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #dc3545; /* Red color */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 12px;
+            z-index: 1001;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="https://agotarofficialsite.my.canva.site/starstatic1/images/8ed23507a8ab4a04f31c436754d8db0c.png" alt="Game launcher 2">
+    </div>
+    <div class="button-container">
+        <button id="originalButton1">Minecraft 1.5.2</button>
+        <button id="originalButton2">Minecraft 1.8.8</button>
+    </div>
+    <div class="overlay" id="overlay">
+        <button class="back-button" id="backButton">Back</button>
+        <iframe id="overlayIframe"></iframe>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const originalButton1 = document.getElementById('originalButton1');
+            const originalButton2 = document.getElementById('originalButton2');
+            const overlay = document.getElementById('overlay');
+            const overlayIframe = document.getElementById('overlayIframe');
+            const backButton = document.getElementById('backButton');
+
+            function openOverlay(url) {
+                overlay.style.display = 'flex';
+                overlayIframe.src = url;
+            }
+
+            function closeOverlay() {
+                overlay.style.display = 'none';
+                overlayIframe.src = '';
+            }
+
+            originalButton1.addEventListener('click', () => {
+                openOverlay('https://art-is-wowzers.vercel.app/');
+            });
+
+            originalButton2.addEventListener('click', () => {
+                openOverlay('https://wo-j4k-9302.vercel.app/');
+            });
+
+            backButton.addEventListener('click', closeOverlay);
+        });
+    </script>
+</body>
+</html>
