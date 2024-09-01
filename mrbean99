@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>how did you get this</title>
+  <style>
+    body {
+      background-color: #0023a0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .normal-image {
+      max-width: 80%; /* Adjust maximum width to make the image smaller */
+      display: block;
+      margin-bottom: 10px; /* Adjust spacing between image and button */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .button {
+      width: 124px;
+      height: 126px;
+      background-image: url('https://agotarofficialsite.my.canva.site/dagjzdakpce/images/e614d6a2488e6e96354dfbba748921bf.png');
+      background-size: cover;
+      border: none;
+      cursor: pointer;
+      display: block; /* Ensure the button is a block-level element */
+      margin: 0 auto; /* Center the button horizontally */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="https://static.wixstatic.com/media/93d622_1e7ac53575404468a6eafc91174847ab~mv2.png/v1/fill/w_528,h_177,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/game%20launcher2.png" alt="Click on the Icon to play." class="normal-image">
+    <a href="#" class="button" id="openWindow"></a>
+  </div>
+
+  <script>
+    var url = "https://book-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/mind4ur/debugactions@57aba9c568b75b8aaddbcad0a05f8c26f57b344b/package/1v1old.xml&container=ig/";
+
+    document.getElementById('openWindow').addEventListener('click', function(event) {
+      event.preventDefault();
+      var win = window.open('', '_blank'); // Open a new blank window
+      win.document.body.style.margin = '0';
+      win.document.body.style.height = '100vh';
+      var iframe = win.document.createElement('iframe');
+      iframe.style.border = 'none';
+      iframe.style.width = '100%';
+      iframe.style.height = '100%';
+      iframe.style.margin = '0';
+      iframe.src = url;
+      win.document.body.appendChild(iframe);
+    });
+  </script>
+</body>
+</html>
